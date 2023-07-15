@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -24,16 +26,23 @@ class BookController extends Controller
      */
     public function create(): Response
     {
-        return 'Hello, World!';
-        //return Inertia::render('Books/Create');
+        return Inertia::render('Books/Create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
-        //
+        $validated = $request->validate([
+            'isbn' => 'required|numeric',
+            'title' => 'required|string|max:255',
+            'author' => 'required|string|max:255',
+        ]);
+ 
+        DB::table('books')->insert($validated);
+ 
+        return redirect(route('books.index'));
     }
 
     /**

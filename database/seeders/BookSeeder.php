@@ -16,7 +16,7 @@ class BookSeeder extends Seeder
     {
         DB::table('books')->insert([
             'isbn' => '1',
-            'name' => 'Titania',
+            'title' => 'Titania',
             'author' => 'xi',
         ]);
     }

@@ -10,10 +10,10 @@ defineProps(['book']);
         <div class="flex-1">
             <div class="flex justify-between items-center">
                 <div>
-                    <span class="text-gray-800">{{ book.name }}</span>
+                    <span class="text-gray-900 text-xl">{{ book.title }}</span>
                 </div>
             </div>
-            <p class="mt-4 text-lg text-gray-900">{{ book.author }}</p>
+            <p class="mt-4 text-base text-gray-700">{{ book.author }}</p>
         </div>
     </div>
 </template>

@@ -31,7 +31,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::resource('books', BookController::class)
-    ->only(['index', 'store'])
+    ->only(['create', 'index', 'store'])
     ->middleware(['auth', 'verified']);
 
 Route::resource('authors', AuthorController::class)
