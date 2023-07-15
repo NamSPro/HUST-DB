@@ -34,6 +34,10 @@ Route::resource('books', BookController::class)
     ->only(['index', 'store'])
     ->middleware(['auth', 'verified']);
 
+Route::resource('authors', AuthorController::class)
+    ->only(['index'])
+    ->middleware(['auth', 'verified']);
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

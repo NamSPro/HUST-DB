@@ -17,6 +17,9 @@ const form = useForm({
     <AuthenticatedLayout>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">Book Listing</h2>
+            <div v-if="$page.props.auth.user.is_admin">
+                <PrimaryButton :href="route('book.create')" class="mt-4">Add a Book</PrimaryButton>
+            </div>
         </template>
         <div class="mt-6 bg-white shadow-sm rounded-lg divide-y">
             <Book
