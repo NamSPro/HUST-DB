@@ -7,17 +7,15 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
-class BookSeeder extends Seeder
+class AuthorSeeder extends Seeder
 {
     /**
      * Run the database seeders.
      */
     public function run(): void
     {
-        DB::table('books')->insert([
-            'isbn' => '1',
-            'title' => 'How To',
-            'author_id' => '1',
+        DB::table('authors')->insert([
+            'name' => 'Randall Munroe',
         ]);
     }
 }

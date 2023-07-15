@@ -13,7 +13,7 @@ defineProps(['book']);
                     <span class="text-gray-900 text-xl">{{ book.title }}</span>
                 </div>
             </div>
-            <p class="mt-4 text-base text-gray-700">{{ book.author }}</p>
+            <p class="mt-4 text-base text-gray-700">{{ book.author.name }}</p>
         </div>
     </div>
 </template>

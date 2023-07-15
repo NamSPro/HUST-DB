@@ -15,7 +15,7 @@ return new class extends Migration
             $table->integer('isbn')->unique();
             $table->timestamps();
             $table->string('title');
-            $table->string('author');
+            $table->foreignId('author_id')->constrained()->cascadeOnDelete();
         });
     }
 
